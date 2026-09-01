@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ระบบแพลนทริปท่องเที่ยว 2569</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; font-family: 'Kanit', sans-serif; margin: 0; padding: 0; }
+        body { 
+            background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 50%, #e0e7ff 100%); 
+            color: #1e293b; 
+            padding: 24px 12px; 
+            display: flex; 
+            justify-content: center; 
+            min-height: 100vh;
+            scroll-behavior: smooth;
+        }
+        .container { width: 100%; max-width: 1100px; }
+        
+        .header-title { 
+            text-align: center; 
+            margin-bottom: 24px; 
+            font-size: 28px; 
+            font-weight: 700;
+            color: #0284c7;
+            text-shadow: 0 2px 4px rgba(2, 132, 199, 0.15);
+        }
+
+        /* ตารางภาพรวม */
+        .table-card { 
+            background: #ffffff;
+            border-radius: 20px; 
+            border: 1px solid #bae6fd;
+            box-shadow: 0 10px 30px rgba(14, 165, 233, 0.12);
+            overflow-x: auto; 
+        }
+
+        table { width: 100%; border-collapse: collapse; text-align: center; min-width: 950px; }
+        
+        th { 
+            background: #f0f9ff;
+            color: #0369a1; 
+            font-weight: 700; 
+            font-size: 14px;
+            padding: 16px 10px;
+            border-bottom: 2px solid #bae6fd;
+            white-space: nowrap;
+        }
+
+        td { 
+            padding: 14px 10px; 
+            border-bottom: 1px solid #f1f5f9; 
+            font-size: 14px;
+            color: #334155;
+        }
+
+        tr:hover { background-color: #f8fafc; }
+        
+        td.trip-name { text-align: left; font-weight: 600; color: #0f172a; padding-left: 16px; }
+        .flag-icon { width: 20px; height: 15px; vertical-align: middle; margin-right: 4px; border-radius: 2px; box-shadow: 0 1px 3px rgba(0,0,0,0.2); }
+
+        .price { color: #d97706; font-weight: 600; }
+        .full-status { color: #ef4444; font-weight: 700; }
+        
+        .badge { 
+            padding: 4px 12px; 
+            border-radius: 9999px; 
+            font-size: 12px; 
+            font-weight: 600; 
+            display: inline-block; 
+            white-space: nowrap; 
+        }
+        .badge-done { background: #f1f5f9; color: #64748b; border: 1px solid #cbd5e1; }
+        .badge-upcoming { background: #dcfce7; color: #15803d; border: 1px solid #86efac; }
+
+        .btn-group { display: flex; gap: 6px; justify-content: center; }
+
+        .btn-action {
+            color: #fff;
+            border: none;
+            padding: 7px 14px;
+            border-radius: 10px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            white-space: nowrap;
+        }
+        
+        .btn-seats {
+            background: linear-gradient(135deg, #38bdf8, #0284c7);
+            box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
+        }
+        .btn-seats:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(2, 132, 199, 0.4);
+        }
+
+        .btn-detail {
+            background: linear-gradient(135deg, #34d399, #059669);
+            box-shadow: 0 4px 12px rgba(52, 211, 153, 0.3);
+        }
+        .btn-detail:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(5, 150, 105, 0.4);
+        }
+
+        .btn-close {
+            background: #fee2e2;
+            color: #dc2626;
+            border: 1px solid #fca5a5;
+            padding: 8px 20px;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.2s;
+        }
+        .btn-close:hover { background: #fca5a5; color: #991b1b; }
+
+        .info-section {
+            display: none; 
+            margin-top: 30px;
+            background: #ffffff;
+            border: 2px solid #bae6fd;
+            border-radius: 24px;
+            padding: 28px 20px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(14, 165, 233, 0.15);
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .van-wrapper { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 20px; }
+        .van-card { 
+            background: #f8fafc; 
+            border: 2px solid #e2e8f0; 
+            border-radius: 24px; 
+            padding: 20px 16px; 
+            width: 320px; 
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06); 
+        }
+        .van-header { 
+            font-size: 18px; 
+            font-weight: 700; 
+            color: #0284c7; 
+            margin-bottom: 16px; 
+            text-align: center;
+        }
+        
+        .seat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 16px; }
+        
+        .seat { 
+            background: #ffffff; 
+            border: 2px solid #cbd5e1; 
+            border-radius: 14px; 
+            height: 64px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .seat-num { font-size: 11px; color: #64748b; line-height: 1.1; }
+        .seat-status { font-size: 13px; font-weight: 600; line-height: 1.2; }
+        
+        .seat.available { border-color: #4ade80; background: #f0fdf4; }
+        .seat.available .seat-status { color: #16a34a; }
+        
+        .seat.booked { border-color: #fca5a5; background: #fef2f2; }
+        .seat.booked .seat-status { color: #dc2626; }
+
+        .seat.driver { border-color: #cbd5e1; background: #e2e8f0; }
+        .seat.driver .seat-status { color: #475569; }
+        
+        .seat-mascot-space {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+        }
+
+        .quote { font-size: 12px; color: #64748b; font-style: italic; margin-top: 12px; }
+        
+        .legend { display: inline-flex; gap: 20px; font-size: 14px; background: #f0f9ff; padding: 8px 18px; border-radius: 20px; margin-bottom: 10px; border: 1px solid #bae6fd; }
+        .legend-item { display: flex; align-items: center; gap: 8px; font-weight: 500; color: #0369a1; }
+        .dot { width: 10px; height: 10px; border-radius: 50%; }
+        .dot-green { background: #22c55e; }
+        .dot-red { background: #ef4444; }
+
+        .detail-box {
+            text-align: left;
+            max-width: 700px;
+            margin: 0 auto;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 18px;
+            padding: 24px;
+            color: #334155;
+            line-height: 1.8;
+        }
+        .detail-box h3 { color: #0284c7; margin-bottom: 12px; font-size: 17px; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-top: 20px; }
+        .detail-box h3:first-child { margin-top: 0; }
+        .detail-box ul { padding-left: 0; list-style: none; }
+        .detail-box li { margin-bottom: 8px; padding-left: 20px; position: relative; }
+        .detail-box li::before { content: "•"; position: absolute; left: 0; color: #0284c7; font-weight: bold; }
+        .day-group { color: #d97706; font-weight: 700; margin-top: 16px; margin-bottom: 6px; display: block; font-size: 15px; }
+        .day-group:first-child { margin-top: 0; }
+        .detail-subtitle { color: #d97706; font-weight: 600; margin-bottom: 16px; display: block; text-align: center; font-size: 15px; }
+        .note-text { color: #dc2626; font-size: 13px; margin-top: 14px; font-style: italic; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1 class="header-title">⛰️ ตารางแพลนทริปท่องเที่ยว 2569 🌿</h1>
+    
+    <!-- 1. ตารางภาพรวมหน้าแรก -->
+    <div class="table-card">
+        <table>
+            <thead>
+                <tr>
+                    <th style="text-align: left; padding-left: 16px;">ทริป</th>
+                    <th>วันที่</th>
+                    <th>กทม</th>
+                    <th>ว่าง</th>
+                    <th>ราคา</th>
+                    <th>หน้างาน</th>
+                    <th>ราคา</th>
+                    <th>สมาชิกรวม</th>
+                    <th>ที่ว่าง</th>
+                    <th>สถานะทริป</th>
+                    <th>ผังที่นั่ง / รายละเอียด</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="trip-name">🌲 โป่งแง้น จ.เชียงใหม่</td>
+                    <td>28/02-01/03/69</td>
+                    <td>20</td>
+                    <td>0</td>
+                    <td class="price">2,800 ฿</td>
+                    <td>0</td>
+                    <td class="price">0 ฿</td>
+                    <td>20</td>
+                    <td class="full-status">เต็ม</td>
+                    <td><span class="badge badge-done">จบทริป</span></td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td class="trip-name">🌲 โป่งแง้น จ.เชียงใหม่</td>
+                    <td>09-10/05/69</td>
+                    <td>20</td>
+                    <td>0</td>
+                    <td class="price">2,800 ฿</td>
+                    <td>0</td>
+                    <td class="price">0 ฿</td>
+                    <td>20</td>
+                    <td class="full-status">เต็ม</td>
+                    <td><span class="badge badge-done">จบทริป</span></td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td class="trip-name">🏔️ ภูสอยดาว จ.อุตรดิตถ์</td>
+                    <td>28-29/08/69</td>
+                    <td>10</td>
+                    <td>0</td>
+                    <td class="price">1,900 ฿</td>
+                    <td>2</td>
+                    <td class="price">900 ฿</td>
+                    <td>12</td>
+                    <td class="full-status">เต็ม</td>
+                    <td><span class="badge badge-done">จบทริป</span></td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td class="trip-name">🌊 น้ำตกห้วยน้ำเย็น จ.เชียงใหม่</td>
+                    <td>26-27/09/69</td>
+                    <td>30</td>
+                    <td>0</td>
+                    <td class="price">2,800 ฿</td>
+                    <td>2</td>
+                    <td class="price">1,500 ฿</td>
+                    <td>32</td>
+                    <td class="full-status">เต็ม</td>
+                    <td><span class="badge badge-upcoming">กำลังจะเริ่ม</span></td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td class="trip-name"><img src="https://flagcdn.com/la.svg" class="flag-icon" alt="ธงชาติลาว"> โบลาเวน-ลาวใต้</td>
+                    <td>2-4/10/69</td>
+                    <td>30</td>
+                    <td>0</td>
+                    <td class="price">3,850 ฿</td>
+                    <td>0</td>
+                    <td class="price">0 ฿</td>
+                    <td>30</td>
+                    <td class="full-status">เต็ม</td>
+                    <td><span class="badge badge-upcoming">กำลังจะเริ่ม</span></td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td class="trip-name">🌅 ม่อนปุยหมอก จ.ตาก</td>
+                    <td>17-18/10/69</td>
+                    <td>20</td>
+                    <td>0</td>
+                    <td class="price">2,100 ฿</td>
+                    <td>0</td>
+                    <td class="price">1,000 ฿</td>
+                    <td>20</td>
+                    <td style="color: #16a34a; font-weight: bold; font-size: 16px;">2</td>
+                    <td><span class="badge badge-upcoming">กำลังจะเริ่ม</span></td>
+                    <td>
+                        <div class="btn-group">
+                            <button class="btn-action btn-seats" onclick="showSeats('ม่อนปุยหมอก จ.ตาก', '17-18 ตุลาคม 2569')">🔹 ผังที่นั่ง</button>
+                            <button class="btn-action btn-detail" onclick="showDetails('ม่อนปุยหมอก จ.ตาก')">📋 รายละเอียดทริป</button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- 2. ผังที่นั่ง -->
+    <div class="info-section" id="seatSection">
+        <h2 id="seatTripTitle" style="font-size: 22px; color: #0284c7; margin-bottom: 4px;">🚌 ผังที่นั่ง: ม่อนปุยหมอก จ.ตาก</h2>
+        <p id="seatTripDate" style="font-size: 14px; color: #64748b; margin-bottom: 16px;">วันเดินทาง 17-18 ตุลาคม 2569</p>
+
+        <div class="legend">
+            <div class="legend-item"><span class="dot dot-green"></span> ว่าง</div>
+            <div class="legend-item"><span class="dot dot-red"></span> จองแล้ว</div>
+        </div>
+
+        <div class="van-wrapper">
+            <!-- คันที่ 1 -->
+            <div class="van-card">
+                <div class="van-header">คันไหน 1</div>
+                <div class="seat-grid">
+                    <div class="seat available"><span class="seat-num">10</span><span class="seat-status">ว่าง</span></div>
+                    <div class="seat-mascot-space">🤖</div>
+                    <div class="seat driver"><span class="seat-num">คนขับ</span><span class="seat-status">☸️</span></div>
+
+                    <div class="seat available"><span class="seat-num">1</span><span class="seat-status">ว่าง</span></div>
+                    <div class="seat available"><span class="seat-num">2</span><span class="seat-status">ว่าง</span></div>
+                    <div class="seat available"><span class="seat-num">3</span><span class="seat-status">ว่าง</span></div>
+
+                    <div class="seat available"><span class="seat-num">4</span><span class="seat-status">ว่าง</span></div>
+                    <div class="seat available"><span class="seat-num">5</span><span class="seat-status">ว่าง</span></div>
+                    <div class="seat booked"><span class="seat-num">6</span><span class="seat-status">จองแล้ว</span></div>
+
+                    <div class="seat available"><span class="seat-num">7</span><span class="seat-status">ว่าง</span></div>
+                    <div class="seat available"><span class="seat-num">8</span><span class="seat-status">ว่าง</span></div>
+                    <div class="seat available"><span class="seat-num">9</span><span class="seat-status">ว่าง</span></div>
+                </div>
+                <div class="quote">"เที่ยวไหนก็ได้ ไม่ไปกับคนหลายใจก็พอ"</div>
+            </div>
+
+            <!-- คันที่ 2 -->
+            <div class="van-card">
+                <div class="van-header">คันไหน 2</div>
+                <div class="seat-grid">
+                    <div class="seat available"><span class="seat-num">10</span><span class="seat-status">ว่าง</span></div>
+                    <div class="seat-mascot-space">🤖</div>
+                    <div class="seat driver"><span class="seat-num">คนขับ</span><span class="seat-status">☸️</span></div>
+
+                    <div class="seat available"><span class="seat-num">1</span><span class="seat-status">ว่าง</span></div>
+                    <div class="seat available"><span class="seat-num">2</span><span class="seat-status">ว่าง</span></div>
+                    <div class="seat available"><span class="seat-num">3</span><span class="seat-status">ว่าง</span></div>
+
+                    <div class="seat available"><span class="seat-num">4</span><span class="seat-status">ว่าง</span></div>
+                    <div class="seat available"><span class="seat-num">5</span><span class="seat-status">ว่าง</span></div>
+                    <div class="seat available"><span class="seat-num">6</span><span class="seat-status">ว่าง</span></div>
+
+                    <div class="seat available"><span class="seat-num">7</span><span class="seat-status">ว่าง</span></div>
+                    <div class="seat available"><span class="seat-num">8</span><span class="seat-status">ว่าง</span></div>
+                    <div class="seat available"><span class="seat-num">9</span><span class="seat-status">ว่าง</span></div>
+                </div>
+                <div class="quote">"สู้ๆนะ ไม่มีอะไรที่เราทำไม่ได้"</div>
+            </div>
+        </div>
+
+        <button class="btn-close" onclick="closeSection('seatSection')">❌ ปิดผังที่นั่ง</button>
+    </div>
+
+    <!-- 3. รายละเอียดทริป -->
+    <div class="info-section" id="detailSection">
+        <h2 id="detailTripTitle" style="font-size: 22px; color: #059669; margin-bottom: 4px;">📋 รายละเอียดทริป: "ม่อนปุยหมอก" จ.ตาก 17-18 ตุลา 69</h2>
+        <span class="detail-subtitle">( ทริปหารเฉลี่ย จัดไปกันเอง )</span>
+        
+        <div class="detail-box">
+            <span class="day-group">📅 16 ตุลา 69</span>
+            <ul>
+                <li><strong>20.00</strong> รวมตัวที่จุดขึ้นรถ พร้อมออกเดินทาง</li>
+            </ul>
+
+            <span class="day-group">📅 17 ตุลา 69</span>
+            <ul>
+                <li><strong>06.00</strong> ถึงอุทยานแม่เมย ทำธุระส่วนตัว เปลี่ยนชุดเตรียมลุย หาทานอาหารเช้า</li>
+                <li><strong>08.00</strong> เริ่มเดินขึ้นม่อนปุยหมอก ( รับข้าวเที่ยง มื้อ1 และน้ำดื่ม )</li>
+                <li><strong>17.00</strong> ช่วยกันทำอาหารเย็น มื้อที่ 2 ชาบู</li>
+            </ul>
+
+            <span class="day-group">📅 18 ตุลา 69</span>
+            <ul>
+                <li><strong>06.00</strong> ตื่นนอน และช่วยกันทำอาหารมื้อเช้า มื้อที่ 3 +กาแฟ โอวัลติน</li>
+                <li><strong>09.00</strong> เริ่มทยอยเดินลงมา</li>
+                <li><strong>14.00</strong> เดินทางกลับกรุงเทพ</li>
+                <li><strong>19.00</strong> แวะกินข้าวที่ ตาก / นครสวรรค์ ถ้ายังกินไหว ( ดูแลตัวเอง )</li>
+                <li><strong>22.00-00.00</strong> คาดว่าถึงกรุงเทพ</li>
+            </ul>
+
+            <h3>💰 คนละ 2,100 +/- บาท</h3>
+            <ul>
+                <li>รถตู้วีไอพี 10 ที่นั่ง + น้ำมัน</li>
+                <li>ค่าเข้าอุทยาน-ค่ากางเต็นท์</li>
+                <li>ค่าลูกหาบกองกลาง</li>
+                <li>ค่าเจ้าหน้าที่นำทาง</li>
+                <li>ค่าอาหาร 3มื้อ ที่ระบุ</li>
+            </ul>
+            <p class="note-text">*อาจต้องจ่ายเพิ่ม : ค่าเบียร์ เหล้า ขนม นม เนย โอทีรถตู้*</p>
+        </div>
+
+        <button class="btn-close" onclick="closeSection('detailSection')">❌ ปิดรายละเอียดทริป</button>
+    </div>
+</div>
+
+<script>
+    function showSeats(title, date) {
+        document.getElementById('detailSection').style.display = 'none';
+        document.getElementById('seatTripTitle').innerText = '🚌 ผังที่นั่ง: ' + title;
+        document.getElementById('seatTripDate').innerText = 'วันเดินทาง ' + date;
+        const seatSec = document.getElementById('seatSection');
+        seatSec.style.display = 'block';
+        seatSec.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function showDetails(title) {
+        document.getElementById('seatSection').style.display = 'none';
+        document.getElementById('detailTripTitle').innerText = '📋 รายละเอียดทริป: ' + title;
+        const detailSec = document.getElementById('detailSection');
+        detailSec.style.display = 'block';
+        detailSec.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function closeSection(id) {
+        document.getElementById(id).style.display = 'none';
+    }
+</script>
+
+</body>
+</html>
