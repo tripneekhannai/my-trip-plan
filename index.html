@@ -54,7 +54,6 @@
             transform: translateY(-1px);
         }
 
-        /* ตารางภาพรวม */
         .table-card { 
             background: #ffffff;
             border-radius: 20px; 
@@ -217,13 +216,6 @@
 
         .seat.driver { border-color: #cbd5e1; background: #e2e8f0; }
         .seat.driver .seat-status { color: #475569; }
-        
-        .seat-mascot-space {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 24px;
-        }
 
         .quote { font-size: 12px; color: #64748b; font-style: italic; margin-top: 12px; }
         
@@ -677,31 +669,27 @@
         document.getElementById('seatTripTitle').innerText = '🚌 ผังที่นั่ง: ' + data.title;
         document.getElementById('seatTripDate').innerText = data.date;
 
-        const container = document.getElementById('vanWrapper');
-        container.innerHTML = '';
+        const wrapper = document.getElementById('vanWrapper');
+        wrapper.innerHTML = '';
 
         data.vans.forEach(van => {
             let seatsHtml = '';
-            van.seats.forEach((seat, index) => {
-                if (seat.num === 'driver') {
-                    seatsHtml += `<div class="seat driver"><span class="seat-num">คนขับ</span><span class="seat-status">${seat.status}</span></div>`;
-                } else {
-                    const isAvailable = seat.status === 'ว่าง';
-                    const seatClass = isAvailable ? 'available' : 'booked';
-                    seatsHtml += `
-                        <div class="seat ${seatClass}">
-                            <span class="seat-num">${seat.num}</span>
-                            <span class="seat-status">${seat.status}</span>
-                        </div>
-                    `;
-                }
+            van.seats.forEach(s => {
+                let seatClass = 'seat';
+                let statusText = s.status;
+                if (s.status === 'ว่าง') seatClass += ' available';
+                else if (s.status === 'จองแล้ว') seatClass += ' booked';
+                else if (s.status === '☸️') seatClass += ' driver';
 
-                if (index === 0) {
-                    seatsHtml += `<div class="seat-mascot-space">🤖</div>`;
-                }
+                seatsHtml += `
+                    <div class="${seatClass}">
+                        <span class="seat-num">${s.num === 'driver' ? 'พวงมาลัย' : 'ที่นั่ง ' + s.num}</span>
+                        <span class="seat-status">${statusText}</span>
+                    </div>
+                `;
             });
 
-            container.innerHTML += `
+            wrapper.innerHTML += `
                 <div class="van-card">
                     <div class="van-header">${van.name}</div>
                     <div class="seat-grid">${seatsHtml}</div>
@@ -710,9 +698,9 @@
             `;
         });
 
-        const seatSec = document.getElementById('seatSection');
-        seatSec.style.display = 'block';
-        seatSec.scrollIntoView({ behavior: 'smooth' });
+        const seatSection = document.getElementById('seatSection');
+        seatSection.style.display = 'block';
+        seatSection.scrollIntoView({ behavior: 'smooth' });
     }
 
     function showDetails(tripKey) {
@@ -724,15 +712,15 @@
         document.getElementById('detailSubtitle').innerText = data.subtitle;
         document.getElementById('detailContent').innerHTML = data.details;
 
-        const detailSec = document.getElementById('detailSection');
-        detailSec.style.display = 'block';
-        detailSec.scrollIntoView({ behavior: 'smooth' });
+        const detailSection = document.getElementById('detailSection');
+        detailSection.style.display = 'block';
+        detailSection.scrollIntoView({ behavior: 'smooth' });
     }
 
-    function closeSection(id) {
-        document.getElementById(id).style.display = 'none';
+    function closeSection(sectionId) {
+        document.getElementById(sectionId).style.display = 'none';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 </script>
-
 </body>
 </html>
