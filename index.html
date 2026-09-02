@@ -3,35 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ทริปนี้คันไหน 2569</title>
+    <title>ทริปนี้คันไหน 2569 🚐✨</title>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * { box-sizing: border-box; font-family: 'Kanit', sans-serif; margin: 0; padding: 0; }
         body { 
-            background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 50%, #e0e7ff 100%); 
+            background: linear-gradient(135deg, #fef08a 0%, #fed7aa 35%, #bae6fd 70%, #f5d0fe 100%); 
             color: #1e293b; 
-            padding: 24px 12px; 
+            padding: 30px 15px; 
             display: flex; 
             justify-content: center; 
             min-height: 100vh;
-            scroll-behavior: smooth;
         }
-        .container { width: 100%; max-width: 1100px; }
+        .container { width: 100%; max-width: 1150px; }
         
+        .header-box {
+            text-align: center;
+            margin-bottom: 25px;
+            background: rgba(255, 255, 255, 0.85);
+            padding: 20px;
+            border-radius: 25px;
+            box-shadow: 0 8px 25px rgba(249, 115, 22, 0.15);
+            border: 2px solid #ffedd5;
+        }
+
         .header-title { 
-            text-align: center; 
-            margin-bottom: 8px; 
-            font-size: 28px; 
+            font-size: 32px; 
             font-weight: 700;
-            color: #0284c7;
-            text-shadow: 0 2px 4px rgba(2, 132, 199, 0.15);
+            color: #ea580c;
+            text-shadow: 0 2px 4px rgba(234, 88, 12, 0.1);
+            margin-bottom: 5px;
         }
 
         .contact-banner {
-            text-align: center;
-            margin-bottom: 24px;
-            font-size: 15px;
-            color: #334155;
+            font-size: 16px;
+            color: #475569;
             font-weight: 500;
         }
 
@@ -39,8 +45,8 @@
             color: #0284c7;
             text-decoration: none;
             font-weight: 600;
-            background: #ffffff;
-            padding: 4px 14px;
+            background: #f0f9ff;
+            padding: 4px 16px;
             border-radius: 9999px;
             border: 1px solid #bae6fd;
             display: inline-block;
@@ -49,49 +55,68 @@
         }
 
         .contact-banner a:hover {
-            background: #f0f9ff;
-            color: #0369a1;
+            background: #e0f2fe;
             transform: translateY(-1px);
         }
 
         .table-card { 
-            background: #ffffff;
-            border-radius: 20px; 
-            border: 1px solid #bae6fd;
-            box-shadow: 0 10px 30px rgba(14, 165, 233, 0.12);
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 24px; 
+            border: 2px solid #ffffff;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
             overflow-x: auto; 
+            padding: 10px;
         }
 
-        table { width: 100%; border-collapse: collapse; text-align: center; min-width: 950px; }
+        table { width: 100%; border-collapse: collapse; text-align: center; min-width: 1000px; }
         
         th { 
-            background: #f0f9ff;
-            color: #0369a1; 
+            background: linear-gradient(135deg, #ffedd5, #fef08a);
+            color: #c2410c; 
             font-weight: 700; 
             font-size: 14px;
             padding: 16px 10px;
-            border-bottom: 2px solid #bae6fd;
+            border-bottom: 3px solid #fed7aa;
             white-space: nowrap;
         }
+        th:first-child { border-top-left-radius: 16px; }
+        th:last-child { border-top-right-radius: 16px; }
 
         td { 
-            padding: 14px 10px; 
+            padding: 16px 10px; 
             border-bottom: 1px solid #f1f5f9; 
             font-size: 14px;
             color: #334155;
         }
 
-        tr:hover { background-color: #f8fafc; }
+        tr:hover { background-color: #fffaf0; }
         
         td.trip-name { text-align: left; font-weight: 600; color: #0f172a; padding-left: 16px; }
-        .flag-icon { width: 20px; height: 15px; vertical-align: middle; margin-right: 4px; border-radius: 2px; box-shadow: 0 1px 3px rgba(0,0,0,0.2); }
 
         .price { color: #d97706; font-weight: 600; }
         .full-status { color: #ef4444; font-weight: 700; }
         .avail-status { color: #16a34a; font-weight: 700; }
         
+        .highlight-available {
+            background: #dcfce7;
+            color: #15803d;
+            border: 2px solid #4ade80;
+            padding: 4px 10px;
+            border-radius: 8px;
+            font-weight: 700;
+            display: inline-block;
+            box-shadow: 0 0 10px rgba(74, 222, 128, 0.4);
+            animation: pulseGlow 1.5s infinite;
+        }
+
+        @keyframes pulseGlow {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.5); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 6px rgba(74, 222, 128, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); }
+        }
+        
         .badge { 
-            padding: 4px 12px; 
+            padding: 5px 14px; 
             border-radius: 9999px; 
             font-size: 12px; 
             font-weight: 600; 
@@ -99,7 +124,7 @@
             white-space: nowrap; 
         }
         .badge-done { background: #f1f5f9; color: #64748b; border: 1px solid #cbd5e1; }
-        .badge-upcoming { background: #dcfce7; color: #15803d; border: 1px solid #86efac; }
+        .badge-upcoming { background: #dcfce7; color: #15803d; border: 1px solid #86efac; box-shadow: 0 2px 5px rgba(22, 163, 74, 0.15); }
 
         .btn-group { display: flex; gap: 6px; justify-content: center; }
 
@@ -122,19 +147,13 @@
             background: linear-gradient(135deg, #38bdf8, #0284c7);
             box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
         }
-        .btn-seats:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(2, 132, 199, 0.4);
-        }
+        .btn-seats:hover { transform: translateY(-2px); }
 
         .btn-detail {
             background: linear-gradient(135deg, #34d399, #059669);
             box-shadow: 0 4px 12px rgba(52, 211, 153, 0.3);
         }
-        .btn-detail:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(5, 150, 105, 0.4);
-        }
+        .btn-detail:hover { transform: translateY(-2px); }
 
         .btn-disabled {
             background: #e2e8f0 !important;
@@ -142,32 +161,17 @@
             cursor: not-allowed !important;
             box-shadow: none !important;
             transform: none !important;
-            opacity: 0.8;
         }
-
-        .btn-close {
-            background: #fee2e2;
-            color: #dc2626;
-            border: 1px solid #fca5a5;
-            padding: 8px 20px;
-            border-radius: 10px;
-            font-size: 13px;
-            font-weight: 600;
-            cursor: pointer;
-            margin-top: 20px;
-            transition: all 0.2s;
-        }
-        .btn-close:hover { background: #fca5a5; color: #991b1b; }
 
         .info-section {
             display: none; 
             margin-top: 30px;
-            background: #ffffff;
-            border: 2px solid #bae6fd;
+            background: rgba(255, 255, 255, 0.95);
+            border: 2px solid #fed7aa;
             border-radius: 24px;
-            padding: 28px 20px;
+            padding: 30px 20px;
             text-align: center;
-            box-shadow: 0 15px 35px rgba(14, 165, 233, 0.15);
+            box-shadow: 0 15px 35px rgba(249, 115, 22, 0.12);
             animation: fadeIn 0.4s ease-in-out;
         }
 
@@ -176,88 +180,216 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .van-wrapper { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 20px; }
-        .van-card { 
-            background: #f8fafc; 
-            border: 2px solid #e2e8f0; 
-            border-radius: 24px; 
-            padding: 20px 16px; 
-            width: 320px; 
-            box-shadow: 0 8px 20px rgba(0,0,0,0.06); 
+        .van-container-wrapper {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 25px 0;
         }
-        .van-header { 
-            font-size: 18px; 
-            font-weight: 700; 
-            color: #0284c7; 
-            margin-bottom: 16px; 
-            text-align: center;
+
+        .van-card {
+            background: #ffffff;
+            border: 3px solid #e2e8f0;
+            border-radius: 30px;
+            width: 330px;
+            padding: 20px 14px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.06);
         }
-        
-        .seat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 16px; }
-        
-        .seat { 
-            background: #ffffff; 
-            border: 2px solid #cbd5e1; 
-            border-radius: 14px; 
-            height: 64px;
+
+        .van-title {
+            font-size: 17px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 15px;
+            background: #f8fafc;
+            padding: 8px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .seat-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .seat-box {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 6px 2px;
+            min-height: 68px;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
         }
-        .seat-num { font-size: 11px; color: #64748b; line-height: 1.1; }
-        .seat-status { font-size: 13px; font-weight: 600; line-height: 1.2; word-break: break-word; text-align: center; padding: 0 2px; }
-        
-        .seat.available { border-color: #4ade80; background: #f0fdf4; }
-        .seat.available .seat-status { color: #16a34a; }
-        
-        .seat.booked { border-color: #93c5fd; background: #eff6ff; }
-        .seat.booked .seat-status { color: #1d4ed8; }
 
-        .seat.driver { border-color: #cbd5e1; background: #e2e8f0; }
-        .seat.driver .seat-status { color: #475569; }
+        .seat-box.bot-box {
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+            border: 2px solid #bae6fd;
+            padding: 4px;
+            position: relative;
+        }
 
-        .quote { font-size: 12px; color: #64748b; font-style: italic; margin-top: 12px; }
-        
-        .legend { display: inline-flex; gap: 20px; font-size: 14px; background: #f0f9ff; padding: 8px 18px; border-radius: 20px; margin-bottom: 10px; border: 1px solid #bae6fd; }
-        .legend-item { display: flex; align-items: center; gap: 8px; font-weight: 500; color: #0369a1; }
-        .dot { width: 10px; height: 10px; border-radius: 50%; }
-        .dot-green { background: #22c55e; }
-        .dot-blue { background: #3b82f6; }
+        .bot-img-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-        .detail-box {
-            text-align: left;
-            max-width: 750px;
-            margin: 0 auto;
+        .bot-img-container svg {
+            width: 32px;
+            height: 32px;
+            filter: drop-shadow(0 2px 4px rgba(14, 165, 233, 0.3));
+        }
+
+        .seat-box.driver-box {
+            background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+            border: 2px solid #4ade80;
+            padding: 4px;
+            position: relative;
+        }
+
+        .driver-img-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .driver-img-container svg {
+            width: 28px;
+            height: 28px;
+            filter: drop-shadow(0 2px 4px rgba(34, 197, 94, 0.3));
+        }
+
+        .seat-num {
+            font-size: 10px;
+            color: #64748b;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .seat-name {
+            font-size: 11px;
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        .seat-booked {
+            background: #fff1f2 !important;
+            border: 2px solid #f43f5e !important;
+            box-shadow: 0 3px 10px rgba(244, 63, 94, 0.15);
+        }
+        .seat-booked .seat-name {
+            color: #e11d48 !important;
+        }
+
+        .seat-empty {
+            background: #f0fdf4 !important;
+            border: 2px dashed #86efac !important;
+        }
+        .seat-empty .seat-name {
+            color: #16a34a !important;
+        }
+
+        .van-quote {
+            margin-top: 18px;
+            font-style: italic;
+            font-size: 13px;
+            color: #64748b;
+            font-weight: 500;
             background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-radius: 18px;
-            padding: 24px;
-            color: #334155;
-            line-height: 1.8;
+            padding: 8px;
+            border-radius: 10px;
         }
-        .detail-box h3 { color: #0284c7; margin-bottom: 12px; font-size: 17px; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-top: 20px; }
-        .detail-box h3:first-child { margin-top: 0; }
-        .detail-box ul { padding-left: 0; list-style: none; }
-        .detail-box li { margin-bottom: 8px; padding-left: 20px; position: relative; }
-        .detail-box li::before { content: "•"; position: absolute; left: 0; color: #0284c7; font-weight: bold; }
-        .day-group { color: #d97706; font-weight: 700; margin-top: 16px; margin-bottom: 6px; display: block; font-size: 15px; }
-        .day-group:first-child { margin-top: 0; }
-        .detail-subtitle { color: #d97706; font-weight: 600; margin-bottom: 16px; display: block; text-align: center; font-size: 15px; }
-        .note-text { color: #dc2626; font-size: 13px; margin-top: 14px; font-style: italic; }
-        .highlight-bg { background-color: #eff6ff; border-left: 4px solid #0284c7; padding: 12px 16px; border-radius: 8px; margin: 16px 0; font-size: 14px; line-height: 1.7; }
-        .warn-bg { background-color: #fef2f2; border-left: 4px solid #ef4444; padding: 12px 16px; border-radius: 8px; margin: 16px 0; font-size: 14px; line-height: 1.7; }
+
+        .detail-card-content {
+            text-align: left;
+            max-width: 850px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 20px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+        }
+
+        .detail-card-content h3 {
+            color: #059669;
+            margin-top: 18px;
+            margin-bottom: 8px;
+            font-size: 18px;
+        }
+        .detail-card-content h3:first-child { margin-top: 0; }
+
+        .detail-card-content ul {
+            padding-left: 20px;
+            color: #334155;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .detail-card-content p {
+            color: #334155;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .policy-box {
+            background: #fff7ed;
+            border: 2px dashed #fdba74;
+            padding: 15px;
+            border-radius: 14px;
+            margin-top: 20px;
+        }
+        .policy-box h4 {
+            color: #c2410c;
+            margin-bottom: 6px;
+            font-size: 15px;
+        }
+        .policy-box ul {
+            margin: 0;
+            padding-left: 18px;
+            color: #9a3412;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .btn-close {
+            background: #fee2e2;
+            color: #dc2626;
+            border: 1px solid #fca5a5;
+            padding: 10px 28px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.2s;
+            box-shadow: 0 4px 12px rgba(239, 68, 68, 0.15);
+        }
+        .btn-close:hover { background: #fca5a5; color: #991b1b; transform: translateY(-1px); }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1 class="header-title">🚐 ทริปนี้คันไหน 2569 🌿</h1>
-    <div class="contact-banner">
-        สนใจทริปติดต่อได้ที่เพจ FB: <a href="https://www.facebook.com/share/1EwgoVtsu5/" target="_blank">ทริปนี้คันไหน</a>
+    <div class="header-box">
+        <h1 class="header-title">🚐 ทริปนี้คันไหน 2569 🌿✨</h1>
+        <div class="contact-banner">
+            สนใจทริปติดต่อได้ที่เพจ FB: <a href="https://www.facebook.com/share/1EwgoVtsu5/" target="_blank">ทริปนี้คันไหน</a>
+        </div>
     </div>
     
-    <!-- 1. ตารางภาพรวมหน้าแรก -->
     <div class="table-card">
         <table>
             <thead>
@@ -291,8 +423,8 @@
                     <td><span class="badge badge-done">จบทริป</span></td>
                     <td>
                         <div class="btn-group">
-                            <button class="btn-action btn-disabled" disabled>🔹 ผังที่นั่ง</button>
-                            <button class="btn-action btn-disabled" disabled>📋 รายละเอียดทริป</button>
+                            <button class="btn-action btn-seats" onclick="showSeats('pong1')">🔹 ผังที่นั่ง</button>
+                            <button class="btn-action btn-disabled" disabled>📋 รายละเอียด</button>
                         </div>
                     </td>
                 </tr>
@@ -310,27 +442,27 @@
                     <td><span class="badge badge-done">จบทริป</span></td>
                     <td>
                         <div class="btn-group">
-                            <button class="btn-action btn-disabled" disabled>🔹 ผังที่นั่ง</button>
-                            <button class="btn-action btn-disabled" disabled>📋 รายละเอียดทริป</button>
+                            <button class="btn-action btn-seats" onclick="showSeats('pong2')">🔹 ผังที่นั่ง</button>
+                            <button class="btn-action btn-disabled" disabled>📋 รายละเอียด</button>
                         </div>
                     </td>
                 </tr>
                 <tr>
                     <td class="trip-name">🏔️ ภูสอยดาว จ.อุตรดิตถ์</td>
-                    <td>28-29/08/69</td>
-                    <td>12</td>
+                    <td>22-23/08/69</td>
+                    <td>10</td>
                     <td class="full-status">เต็ม</td>
                     <td class="price">1900</td>
                     <td>ไม่รับ</td>
                     <td class="full-status">เต็ม</td>
                     <td class="price">900</td>
-                    <td>12</td>
+                    <td>10</td>
                     <td class="full-status">เต็ม</td>
                     <td><span class="badge badge-done">จบทริป</span></td>
                     <td>
                         <div class="btn-group">
-                            <button class="btn-action btn-disabled" disabled>🔹 ผังที่นั่ง</button>
-                            <button class="btn-action btn-disabled" disabled>📋 รายละเอียดทริป</button>
+                            <button class="btn-action btn-seats" onclick="showSeats('phu')">🔹 ผังที่นั่ง</button>
+                            <button class="btn-action btn-detail" onclick="showDetails('phu')">📋 รายละเอียด</button>
                         </div>
                     </td>
                 </tr>
@@ -344,22 +476,22 @@
                     <td class="avail-status">ว่าง</td>
                     <td class="price">1500</td>
                     <td>32</td>
-                    <td class="avail-status">1</td>
+                    <td class="full-status">เต็ม</td>
                     <td><span class="badge badge-upcoming">กำลังจะเริ่ม</span></td>
                     <td>
                         <div class="btn-group">
                             <button class="btn-action btn-seats" onclick="showSeats('huai')">🔹 ผังที่นั่ง</button>
-                            <button class="btn-action btn-detail" onclick="showDetails('huai')">📋 รายละเอียดทริป</button>
+                            <button class="btn-action btn-detail" onclick="showDetails('huai')">📋 รายละเอียด</button>
                         </div>
                     </td>
                 </tr>
                 <tr>
-                    <td class="trip-name"><img src="https://flagcdn.com/la.svg" class="flag-icon" alt="ธงชาติลาว"> โบลาเวน-ลาวใต้</td>
+                    <td class="trip-name">☕🌳 โบลาเวน-ลาวใต้</td>
                     <td>2-4/10/69</td>
                     <td>30</td>
                     <td class="full-status">เต็ม</td>
                     <td class="price">3850</td>
-                    <td>เต็ม</td>
+                    <td>ไม่รับ</td>
                     <td class="full-status">เต็ม</td>
                     <td class="price">0</td>
                     <td>30</td>
@@ -368,7 +500,7 @@
                     <td>
                         <div class="btn-group">
                             <button class="btn-action btn-seats" onclick="showSeats('bolaven')">🔹 ผังที่นั่ง</button>
-                            <button class="btn-action btn-detail" onclick="showDetails('bolaven')">📋 รายละเอียดทริป</button>
+                            <button class="btn-action btn-detail" onclick="showDetails('bolaven')">📋 รายละเอียด</button>
                         </div>
                     </td>
                 </tr>
@@ -376,18 +508,18 @@
                     <td class="trip-name">🌅 ม่อนปุยหมอก จ.ตาก</td>
                     <td>17-18/10/69</td>
                     <td>20</td>
-                    <td class="avail-status">2</td>
+                    <td class="avail-status">ว่าง</td>
                     <td class="price">2100</td>
-                    <td>รับได้</td>
+                    <td><span class="highlight-available">รับได้</span></td>
                     <td class="avail-status">ว่าง</td>
                     <td class="price">1000</td>
-                    <td>22</td>
-                    <td class="avail-status">2</td>
+                    <td>20</td>
+                    <td class="avail-status">ว่าง</td>
                     <td><span class="badge badge-upcoming">กำลังจะเริ่ม</span></td>
                     <td>
                         <div class="btn-group">
                             <button class="btn-action btn-seats" onclick="showSeats('monpui')">🔹 ผังที่นั่ง</button>
-                            <button class="btn-action btn-detail" onclick="showDetails('monpui')">📋 รายละเอียดทริป</button>
+                            <button class="btn-action btn-detail" onclick="showDetails('monpui')">📋 รายละเอียด</button>
                         </div>
                     </td>
                 </tr>
@@ -395,332 +527,421 @@
         </table>
     </div>
 
-    <!-- 2. ผังที่นั่ง (Dynamic Section) -->
+    <!-- ส่วนแสดงผังที่นั่งจำลอง -->
     <div class="info-section" id="seatSection">
-        <h2 id="seatTripTitle" style="font-size: 22px; color: #0284c7; margin-bottom: 4px;">🚌 ผังที่นั่ง</h2>
-        <p id="seatTripDate" style="font-size: 14px; color: #64748b; margin-bottom: 16px;"></p>
-
-        <div class="legend">
-            <div class="legend-item"><span class="dot dot-green"></span> ว่าง</div>
-            <div class="legend-item"><span class="dot dot-blue"></span> จองแล้ว</div>
-        </div>
-
-        <div class="van-wrapper" id="vanWrapper">
-            <!-- ผังที่นั่งจะถูกสร้างผ่าน JavaScript -->
-        </div>
-
-        <button class="btn-close" onclick="closeSection('seatSection')">❌ ปิดผังที่นั่ง</button>
+        <h2 id="seatTripTitle" style="color: #0284c7; margin-bottom: 5px;">🚌 ผังที่นั่ง</h2>
+        <div class="van-container-wrapper" id="vanContainer"></div>
+        <button class="btn-close" onclick="closeSection('seatSection')">❌ ปิดหน้าต่าง</button>
     </div>
 
-    <!-- 3. รายละเอียดทริป (Dynamic Section) -->
+    <!-- ส่วนแสดงรายละเอียดทริป -->
     <div class="info-section" id="detailSection">
-        <h2 id="detailTripTitle" style="font-size: 22px; color: #059669; margin-bottom: 4px;">📋 รายละเอียดทริป</h2>
-        <span class="detail-subtitle" id="detailSubtitle">( ทริปหารเฉลี่ย จัดไปกันเอง )</span>
-        
-        <div class="detail-box" id="detailContent">
-            <!-- รายละเอียดทริปจะถูกสร้างผ่าน JavaScript -->
-        </div>
-
-        <button class="btn-close" onclick="closeSection('detailSection')">❌ ปิดรายละเอียดทริป</button>
+        <h2 id="detailTripTitle" style="color: #059669; margin-bottom: 10px;">📋 รายละเอียดทริป</h2>
+        <div id="detailContentPlaceholder"></div>
+        <button class="btn-close" onclick="closeSection('detailSection')">❌ ปิดหน้าต่าง</button>
     </div>
 </div>
 
 <script>
-    const tripsData = {
-        huai: {
-            title: "🌊 น้ำตกห้วยน้ำเย็น จ.เชียงใหม่",
-            date: "วันเดินทาง 26-27 กันยายน 2569",
-            subtitle: "( ทริปหารเฉลี่ย จัดไปกันเอง แบบเที่ยวกับเพื่อน )",
+    const commonPolicyHTML = `
+        <div class="policy-box">
+            <h4>📌 เงื่อนไขการจองและการยกเลิกทริป</h4>
+            <ul>
+                <li>เก็บมัดจำก่อนคนละ 1,000 บาท ส่วนที่เหลือจ่ายก่อนเดินทาง 10 วัน</li>
+                <li>หากไปไม่ได้แล้ว สามารถหาคนแทนได้ (ไม่คืนเงินทุกกรณี)</li>
+            </ul>
+        </div>
+    `;
+
+    const tripSeatsData = {
+        pong1: {
+            title: "🌲 โป่งแง้น เชียงใหม่ 28 กุมภา - 1 มีนา 69",
+            vans: [
+                {
+                    name: "รถตู้คันที่ 1",
+                    quote: '"ความรักมันยาก"',
+                    driver: "คนขับ",
+                    seats: { 10: true, 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true, 9: true }
+                },
+                {
+                    name: "รถตู้คันที่ 2",
+                    quote: '"ผู้ใดไร้รัก ผู้นั้นเคยรักสุดใจ"',
+                    driver: "คนขับ",
+                    seats: { 10: true, 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true, 9: true }
+                }
+            ]
+        },
+        pong2: {
+            title: "🌲 โป่งแง้น เชียงใหม่ 09-10 พค 69",
             vans: [
                 {
                     name: "คันไหน 1",
-                    quote: '"เที่ยวไหนก็ได้ไม่ไปกับคนหลายใจก็พอ"',
-                    seats: [
-                        { num: 10, status: "จองแล้ว" }, { num: "driver", status: "☸️" },
-                        { num: 1, status: "จองแล้ว" }, { num: 2, status: "จองแล้ว" }, { num: 3, status: "จองแล้ว" },
-                        { num: 4, status: "จองแล้ว" }, { num: 5, status: "จองแล้ว" }, { num: 6, status: "จองแล้ว" },
-                        { num: 7, status: "จองแล้ว" }, { num: 8, status: "จองแล้ว" }, { num: 9, status: "จองแล้ว" }
-                    ]
+                    quote: '"ความรักมันยาก"',
+                    driver: "คนขับ",
+                    seats: { 10: true, 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true, 9: true }
                 },
                 {
                     name: "คันไหน 2",
                     quote: '"ผู้ใดไร้รัก ผู้นั้นเคยรักสุดใจ"',
-                    seats: [
-                        { num: 10, status: "จองแล้ว" }, { num: "driver", status: "☸️" },
-                        { num: 1, status: "จองแล้ว" }, { num: 2, status: "จองแล้ว" }, { num: 3, status: "จองแล้ว" },
-                        { num: 4, status: "จองแล้ว" }, { num: 5, status: "จองแล้ว" }, { num: 6, status: "จองแล้ว" },
-                        { num: 7, status: "ว่าง" }, { num: 8, status: "จองแล้ว" }, { num: 9, status: "จองแล้ว" }
-                    ]
+                    driver: "คนขับ",
+                    seats: { 10: true, 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true, 9: true }
+                }
+            ]
+        },
+        phu: {
+            title: "🏔️ ภูสอยดาว จ.อุตรดิตถ์ 22-23 สิงหาคม 69",
+            vans: [
+                {
+                    name: "คันไหน 1",
+                    quote: '"เที่ยวไหนก็ได้ไม่ไปกับคนหลายใจก็พอ"',
+                    driver: "คนขับ",
+                    seats: { 
+                        10: true, 1: true, 2: true, 3: true, 
+                        4: true, 5: true, 6: true, 
+                        7: true, 8: true, 9: true 
+                    }
+                }
+            ]
+        },
+        huai: {
+            title: "🌊 ห้วยน้ำเย็น-ถ้ำเหมอะลาฮาว-นาขั้นบันได อมก๋อย เชียงใหม่ 26-27 กันยา 69",
+            vans: [
+                {
+                    name: "คันไหน 1",
+                    quote: '"เที่ยวไปไหนก็ได้ไม่ไปกับคนหลายใจก็พอ"',
+                    driver: "คนขับ",
+                    seats: { 10: true, 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true, 9: true }
+                },
+                {
+                    name: "คันไหน 2",
+                    quote: '"ผู้ใดไร้รัก ผู้นั้นเคยรักสุดใจ"',
+                    driver: "คนขับ",
+                    seats: { 10: true, 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true, 9: true }
                 },
                 {
                     name: "คันไหน 3",
                     quote: '"ความรักมันยาก"',
-                    seats: [
-                        { num: 10, status: "จองแล้ว" }, { num: "driver", status: "☸️" },
-                        { num: 1, status: "จองแล้ว" }, { num: 2, status: "จองแล้ว" }, { num: 3, status: "จองแล้ว" },
-                        { num: 4, status: "จองแล้ว" }, { num: 5, status: "จองแล้ว" }, { num: 6, status: "จองแล้ว" },
-                        { num: 7, status: "จองแล้ว" }, { num: 8, status: "จองแล้ว" }, { num: 9, status: "จองแล้ว" }
-                    ]
+                    driver: "คนขับ",
+                    seats: { 10: true, 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true, 9: true }
                 }
-            ],
-            details: `
-                <div class="highlight-bg">
-                    🌿 <strong>ไฮไลต์ทริป:</strong> เดินป่า เที่ยวน้ำตก ชมถ้ำ นาขั้นบันได นอนโฮมสเตย์ (ไม่กางเต็นท์)
-                </div>
-
-                <span class="day-group">📅 25 กันยา 69</span>
-                <ul>
-                    <li><strong>20.00</strong> รวมตัวที่จุดขึ้นรถ (บางนา / BTS หมอชิต) พร้อมออกเดินทาง</li>
-                </ul>
-
-                <span class="day-group">📅 26 กันยา 69</span>
-                <ul>
-                    <li><strong>06.00</strong> ถึงจุดนัดพบ ที่ว่าการอมก๋อย ล้างหน้า แปรงฟัน เปลี่ยนชุดเตรียมลุย หาทานอาหารเช้า / ขึ้นรถโฟร์วีลไปบ้านแม่โขง</li>
-                    <li><strong>10.00</strong> ถึงจุดเริ่มเดินเข้าน้ำตกห้วยน้ำเย็น แจกน้ำ ข้าวเที่ยง (มื้อที่ 1) เริ่มเดินเข้าน้ำตก</li>
-                    <li><strong>17.00</strong> ออกจากน้ำตก เพื่อนั่งรถต่อไปยังที่พัก</li>
-                    <li><strong>18.00</strong> ร่วมด้วยช่วยกันทำอาหารเย็น (มื้อที่ 2) หมูกระทะ</li>
-                </ul>
-
-                <span class="day-group">📅 27 กันยา 69</span>
-                <ul>
-                    <li>ตื่นนอน อาบน้ำแต่งตัว ทานอาหารมื้อเช้า (มื้อที่ 3) ข้าวต้ม กาแฟ โอวัลติน</li>
-                    <li><strong>07.30</strong> **ใครไหว ขึ้นรถโฟร์วีล เพื่อไปยังถ้ำเหมอะลาฮาว</li>
-                    <li><strong>08.00</strong> ถึงถ้ำเหมอะลาฮาว เดินเข้าชม มีเวลา 1 ชม / กลับที่พัก เก็บของ เตรียมกลับบ้าน</li>
-                    <li><strong>10.30</strong> ขึ้นโฟร์วีลเดินทางกลับ ทานอาหารเที่ยง (ดูแลตัวเอง)</li>
-                    <li><strong>14.00</strong> เดินทางกลับกรุงเทพ แวะกินข้าวที่ ตาก / นครสวรรค์ ถ้ายังกินไหว (ดูแลตัวเอง)</li>
-                    <li><strong>00.00 - 01.00</strong> คาดว่าถึงกรุงเทพฯ โดยสวัสดิภาพ</li>
-                </ul>
-
-                <h3>💰 คนละประมาณ 2,800 +/- บาท</h3>
-                <ul>
-                    <li>รถตู้ 10 ที่นั่ง + น้ำมัน</li>
-                    <li>ที่พัก คาเด๊อะโฮมสเตย์ วิวนาขั้นบันได</li>
-                    <li>ค่าเข้าน้ำตกห้วยน้ำเย็น-ถ้ำเหมอะลาฮาว และไกด์</li>
-                    <li>ค่ารถโฟล์วิวรับ-ส่ง</li>
-                    <li>ค่าอาหาร 3 มื้อตามที่ระบุ</li>
-                    <li>ถุงพลาสติกใส่เสื้อผ้าเปียกกลับบ้าน ของกองกลาง</li>
-                </ul>
-                <p class="note-text">*อาจต้องจ่ายเพิ่ม : ค่าเบียร์ เหล้า ขนม นม เนย โอทีรถตู้*</p>
-
-                <div class="warn-bg">
-                    <strong>⚠️ กฎการเข้าชมน้ำตกห้วยน้ำเย็น:</strong><br>
-                    • ไม่อนุญาตให้นำเครื่องดื่มแอลกอฮอล์ทุกชนิดเข้าไปในพื้นที่ (ค่อยกลับมาดื่มที่โฮมสเตย์)<br>
-                    • เศษขยะ พลาสติกที่นำเข้าไป ให้ถือกลับออกมาด้วยทุกชิ้น<br>
-                    • ระหว่างทางไม่แนะนำให้เดินคนเดียว ควรมีเพื่อนร่วมทริปอยู่ด้วยเสมอ เหนื่อยหรืออยากพักให้สะกิดบอกได้เลย (กลุ่มเรามีไกด์ท้องถิ่นนำทาง ปิดหน้า-ท้าย สมาชิก 10 คน / ไกด์ 2 คน)
-                </div>
-
-                <div class="highlight-bg">
-                    <strong>📝 ข้อมูลเพิ่มเติมเกี่ยวกับเส้นทางและที่พัก:</strong><br>
-                    • ทริปนี้ เป็นทริปเดินป่าเข้าชมน้ำตกห้วยน้ำเย็น ที่อยู่ในป่าลึกและดิบชื้น<br>
-                    • ระยะทางการเดินไป 5 กม. และกลับ 5 กม. รวม 10 กม. แต่เป็นทางราบเกือบตลอดเส้นทาง ยกเว้นตอนลงไปชมน้ำตกและเดินกลับขึ้นมา จะเป็นทางชัน ใครเดินขึ้นลงทางชันไม่ไหว ให้เดินไปชมน้ำตกชั้นบนรอได้เลย<br>
-                    • ในระหว่างทางเดินจะมีน้องทากมาเกาะให้เราได้กรี๊ดออกมา กรี๊ดสิกรี๊ดดดด... สิ่งที่ทุกคนต้องเตรียมคือกายและใจ ใครไม่ไหวให้บอกด้วย อย่าฝืน ไม่งั้นหยิกแน่<br>
-                    • เหนื่อยที่สุดของทริปนี้คือการนั่งโฟร์วีลจากอมก๋อยเข้าไปยังหมู่บ้าน ใช้เวลาประมาณ 3 ชม. แต่วิวระหว่างทางคือสวยที่สุดสวยแบบตะโกน เว้นแต่ฝนจะตกหนัก<br>
-                    • หลังกลับมาจากชมน้ำตกแล้ว จะนั่งรถต่อไปยังที่พัก คาเด๊อะโฮมสเตย์ เป็นที่พักวิวนาขั้นบันได ตัดกับลำธารและภูเขา ซึ่งใช้คำว่าสวยได้เปลืองมากกกกกกกก<br>
-                    • ทริปนี้เราจะนอนกันบนบ้านพัก (4 หลัง) ไม่มีกางเต็นท์ เพราะปีที่แล้วนอนจมน้ำและโดนน้องทากเล่นงานมาละ ไม่อยากให้เกิดขึ้นอีก เมาได้ เมาแน่ ไม่เคยรอดสักทริป แต่วันถัดไปคนที่ต้องไปชมถ้ำเหมอะลาฮาว โปรดตื่นด้วย!
-                </div>
-            `
+            ]
         },
         bolaven: {
-            title: "🇱🇦 โบลาเวน-ลาวใต้",
-            date: "วันเดินทาง 2-4 ตุลาคม 2569",
-            subtitle: "( ทริปหารเฉลี่ย จัดไปกันเอง )",
+            title: "☕🌳 โบลาเวน-น้ำตกลาวใต้ 2-4 ตุลาคม 69",
             vans: [
                 {
                     name: "คันไหน 1",
-                    quote: '"ตะลุยลาวใต้ ชมตาดขมวด ตาดเสือ"',
-                    seats: [
-                        { num: 10, status: "จองแล้ว" }, { num: "driver", status: "☸️" },
-                        { num: 1, status: "จองแล้ว" }, { num: 2, status: "จองแล้ว" }, { num: 3, status: "จองแล้ว" },
-                        { num: 4, status: "จองแล้ว" }, { num: 5, status: "จองแล้ว" }, { num: 6, status: "จองแล้ว" },
-                        { num: 7, status: "จองแล้ว" }, { num: 8, status: "จองแล้ว" }, { num: 9, status: "จองแล้ว" }
-                    ]
+                    quote: '"เที่ยวไหนก็ได้ไม่ไปกับคนหลายใจก็พอ"',
+                    driver: "ดรีม",
+                    seats: { 
+                        10: true, 1: true, 2: true, 3: true, 
+                        4: true, 5: true, 6: true, 
+                        7: true, 8: false, 9: false 
+                    }
                 },
                 {
                     name: "คันไหน 2",
-                    quote: '"สวรรค์ของคนรักน้ำตกและสายแคมป์"',
-                    seats: [
-                        { num: 10, status: "จองแล้ว" }, { num: "driver", status: "☸️" },
-                        { num: 1, status: "จองแล้ว" }, { num: 2, status: "จองแล้ว" }, { num: 3, status: "จองแล้ว" },
-                        { num: 4, status: "จองแล้ว" }, { num: 5, status: "จองแล้ว" }, { num: 6, status: "จองแล้ว" },
-                        { num: 7, status: "จองแล้ว" }, { num: 8, status: "จองแล้ว" }, { num: 9, status: "จองแล้ว" }
-                    ]
+                    quote: '"ความรักมันยาก"',
+                    driver: "ปั่น",
+                    seats: { 
+                        10: true, 1: true, 2: true, 3: true, 
+                        4: true, 5: true, 6: true, 
+                        7: false, 8: false, 9: false 
+                    }
                 },
                 {
                     name: "คันไหน 3",
-                    quote: '"กาแฟโบลาเวนที่ว่าขม ยังไม่เท่าเธอไม่รัก"',
-                    seats: [
-                        { num: 10, status: "จองแล้ว" }, { num: "driver", status: "☸️" },
-                        { num: 1, status: "จองแล้ว" }, { num: 2, status: "จองแล้ว" }, { num: 3, status: "จองแล้ว" },
-                        { num: 4, status: "จองแล้ว" }, { num: 5, status: "จองแล้ว" }, { num: 6, status: "จองแล้ว" },
-                        { num: 7, status: "จองแล้ว" }, { num: 8, status: "จองแล้ว" }, { num: 9, status: "จองแล้ว" }
-                    ]
+                    quote: '"สู้ๆนะ ไม่มีอะไรที่เราทำได้"',
+                    driver: "เหมา",
+                    seats: { 
+                        10: true, 1: true, 2: true, 3: true, 
+                        4: true, 5: true, 6: true, 
+                        7: true, 8: true, 9: true 
+                    }
                 }
-            ],
-            details: `
-                <span class="day-group">📅 1 ตุลา 69</span>
-                <ul>
-                    <li><strong>19.00</strong> รวมพลขึ้นรถ ออกเดินทางมุ่งหน้าสู่ ด่านช่องเม็ก จ.อุบลราชธานี</li>
-                </ul>
-
-                <span class="day-group">📅 2 ตุลา 69</span>
-                <ul>
-                    <li><strong>06.00</strong> ถึงช่องเม็ก ทำธุระส่วนตัว ทานอาหารเช้า ( มื้อ1 )</li>
-                    <li><strong>07.30</strong> ผ่านพิธีการตรวจคนเข้าเมือง ไทย-ลาว เดินทางสู่ เมืองปากซอง</li>
-                    <li><strong>09.30</strong> นั่งรถกระบะลุยเข้าพื้นที่ และเริ่มออกเดินป่าลุยน้ำตกตาดขมวด / ตาดเสือ</li>
-                    <li><strong>12.00</strong> พักรับประทานอาหารกลางวันแบบห่อ ( มื้อ2 )</li>
-                    <li><strong>16.00</strong> ตั้งแคมป์ริมน้ำตก ทำอาหารเย็น ( มื้อ3 ) และพักผ่อนตามอัธยาศัย</li>
-                </ul>
-
-                <span class="day-group">📅 3 ตุลา 69</span>
-                <ul>
-                    <li><strong>07.00</strong> ตื่นเช้าจิบกาแฟโบลาเวน ทานอาหารเช้า ( มื้อ4 )</li>
-                    <li><strong>08.30</strong> ออกเดินทางสำรวจไฮไลต์ ตาดแซพะ และ ตาดแซปลา</li>
-                    <li><strong>12.30</strong> พักทานอาหารกลางวัน ( มื้อ5 )</li>
-                    <li><strong>17.30</strong> เข้าพักผ่อน ทำอาหารเย็นสังสรรค์ ( มื้อ6 )</li>
-                </ul>
-
-                <span class="day-group">📅 4 ตุลา 69</span>
-                <ul>
-                    <li><strong>07.00</strong> ทานอาหารเช้า ( มื้อ7 ) แวะถ่ายรูปจุดชมวิว ตาดฟาน (Zipline) และตาดเยือง</li>
-                    <li><strong>12.00</strong> ทานอาหารกลางวัน ลาวใต้ ( มื้อ8 ) แวะซื้อของฝาก กาแฟสด</li>
-                    <li><strong>16.00</strong> เดินทางกลับถึงด่านช่องเม็ก ผ่านพิธีการข้ามฝั่งกลับไทย</li>
-                    <li><strong>03.00</strong> คาดว่าถึงกรุงเทพฯ โดยสวัสดิภาพ</li>
-                </ul>
-
-                <h3>💰 คนละ 3,850 บาท</h3>
-                <ul>
-                    <li>ค่ารถตู้วีไอพี กทม.-ช่องเม็ก ไป-กลับ + น้ำมันตลอดทริป</li>
-                    <li>ค่ารถท้องถิ่น (รถกระบะลุยป่า) ฝั่งลาว</li>
-                    <li>ค่าธรรมเนียมผ่านด่านตรวจคนเข้าเมือง ไทย-ลาว</li>
-                    <li>ค่าเอกสารแจ้งเข้าพื้นที่และค่าเข้าชมน้ำตกทุกแห่ง</li>
-                    <li>ค่าไกด์ท้องถิ่นนำทาง + คนดูแลทริป</li>
-                    <li>ค่าอาหารรวม 8 มื้อ ตามโปรแกรมระบุ</li>
-                    <li>ค่าประกันอุบัติเหตุเดินทางต่างประเทศ</li>
-                </ul>
-                <p class="note-text">*หมายเหตุ: ไม่รวมค่าเล่น Zipline ตาดฟาน และค่าใช้จ่ายส่วนตัวนอกเหนือรายการ*</p>
-            `
+            ]
         },
         monpui: {
-            title: "🌅 ม่อนปุยหมอก จ.ตาก",
-            date: "วันเดินทาง 17-18 ตุลาคม 2569",
-            subtitle: "( ทริปหารเฉลี่ย จัดไปกันเอง )",
+            title: "🌅 ม่อนปุยหมอก จ.ตาก 17-18 ตุลาคม 69",
             vans: [
                 {
                     name: "คันไหน 1",
-                    quote: '"เที่ยวไหนก็ได้ ไม่ไปกับคนหลายใจก็พอ"',
-                    seats: [
-                        { num: 10, status: "จองแล้ว" }, { num: "driver", status: "☸️" },
-                        { num: 1, status: "จองแล้ว" }, { num: 2, status: "จองแล้ว" }, { num: 3, status: "จองแล้ว" },
-                        { num: 4, status: "จองแล้ว" }, { num: 5, status: "จองแล้ว" }, { num: 6, status: "จองแล้ว" },
-                        { num: 7, status: "จองแล้ว" }, { num: 8, status: "จองแล้ว" }, { num: 9, status: "จองแล้ว" }
-                    ]
+                    quote: '"เที่ยวไหนก็ได้ไม่ไปกับคนหลายใจก็พอ"',
+                    driver: "คนขับ",
+                    seats: { 10: false, 1: false, 2: false, 3: false, 4: false, 5: false, 6: false, 7: false, 8: false, 9: false }
                 },
                 {
                     name: "คันไหน 2",
-                    quote: '"สู้ๆนะ ไม่มีอะไรที่เราทำไม่ได้"',
-                    seats: [
-                        { num: 10, status: "จองแล้ว" }, { num: "driver", status: "☸️" },
-                        { num: 1, status: "จองแล้ว" }, { num: 2, status: "จองแล้ว" }, { num: 3, status: "จองแล้ว" },
-                        { num: 4, status: "จองแล้ว" }, { num: 5, status: "จองแล้ว" }, { num: 6, status: "จองแล้ว" },
-                        { num: 7, status: "ว่าง" }, { num: 8, status: "ว่าง" }, { num: 9, status: "จองแล้ว" }
-                    ]
+                    quote: '"สู้ๆนะ ไม่มีอะไรที่เราทำได้"',
+                    driver: "คนขับ",
+                    seats: { 10: false, 1: false, 2: false, 3: false, 4: false, 5: false, 6: false, 7: false, 8: false, 9: false }
                 }
-            ],
-            details: `
-                <span class="day-group">📅 16 ตุลา 69</span>
-                <ul>
-                    <li><strong>20.00</strong> รวมตัวที่จุดขึ้นรถ พร้อมออกเดินทาง</li>
-                </ul>
+            ]
+        }
+    };
 
-                <span class="day-group">📅 17 ตุลา 69</span>
-                <ul>
-                    <li><strong>06.00</strong> ถึงอุทยานแม่เมย ทำธุระส่วนตัว เปลี่ยนชุดเตรียมลุย หาทานอาหารเช้า</li>
-                    <li><strong>08.00</strong> เริ่มเดินขึ้นม่อนปุยหมอก ( รับข้าวเที่ยง มื้อ1 และน้ำดื่ม )</li>
-                    <li><strong>17.00</strong> ช่วยกันทำอาหารเย็น มื้อที่ 2 ชาบู</li>
-                </ul>
+    const tripDetailData = {
+        phu: {
+            title: "🏔️ ภูสอยดาว จ.อุตรดิตถ์ (22–23 สิงหาคม 69)",
+            html: `
+                <div class="detail-card-content">
+                    <p><strong>ลักษณะทริป:</strong> ทริปหารเฉลี่ย จัดไปกันเอง แบบเที่ยวกับเพื่อน</p>
+                    
+                    <h3>📅 กำหนดการทริป</h3>
+                    <p><strong>21 สิงหาคม 2569</strong><br>
+                    - 20.00 น. รวมตัวที่จุดขึ้นรถ พร้อมออกเดินทาง</p>
+                    
+                    <p><strong>22 สิงหาคม 2569</strong><br>
+                    - 04.00 น. ถึงอุทยานฯ ล้างหน้า แปรงฟัน เปลี่ยนชุดเตรียมลุย และรับประทานอาหารเช้า (ดูแลตัวเอง)<br>
+                    - 08.00 น. เริ่มเดินขึ้นภูสอยดาว (รับห่อข้าวกลางวัน มื้อที่ 1 พร้อมน้ำดื่ม)<br>
+                    - 16.00 น. ถึงลานสนภูสอยดาว<br>
+                    - 17.00 น. ช่วยกันทำอาหารเย็น มื้อที่ 2 (ชาบู)</p>
+                    
+                    <p><strong>23 สิงหาคม 2569</strong><br>
+                    - 06.00 น. ตื่นนอน ชมพระอาทิตย์ขึ้น แล้วกลับมาช่วยกันทำอาหารเช้า มื้อที่ 3 พร้อมกาแฟและโอวัลติน<br>
+                    - 09.00 น. เริ่มทยอยเดินลง<br>
+                    - 13.00 น. รับประทานอาหารกลางวัน (ดูแลตัวเอง)<br>
+                    - 14.00 น. เดินทางกลับกรุงเทพฯ<br>
+                    - 19.00 น. แวะรับประทานอาหารที่จังหวัดตาก หรือจังหวัดนครสวรรค์ (ถ้ายังกินไหว 😆) (ดูแลตัวเอง)<br>
+                    - 23.00–00.00 น. คาดว่าถึงกรุงเทพฯ 😆</p>
+                    
+                    <h3>💸 ค่าใช้จ่าย</h3>
+                    <p>คนละประมาณ 1,900 ± บาท (รวมรถตู้ 10 ที่นั่ง + ค่าน้ำมัน, ค่าเข้าอุทยานฯ และค่ากางเต็นท์, ค่าลูกหาบกองกลาง, ค่าอาหาร 3 มื้อตามที่ระบุ, ประกันอุบัติเหตุ, ถุงพลาสติกสำหรับใส่เสื้อผ้าเปียกกลับบ้าน)<br>
+                    <em>*อาจมีค่าใช้จ่ายเพิ่มเติม: เครื่องดื่ม, ขนม, นม/เนย หรือของกินส่วนตัว</em></p>
+                    
+                    <h3>🎒 เตรียมตัวและเตรียมใจ</h3>
+                    <ul>
+                        <li>ออกกำลังกายให้พร้อม และเตรียมใจมาด้วย เหนื่อย...แต่ถึงยอดแน่นอน 💪</li>
+                        <li>เสื้อผ้า ไฟฉาย พาวเวอร์แบงก์ และของใช้ต่าง ๆ ควรใส่ถุงพลาสติกกันน้ำก่อนใส่กระเป๋า</li>
+                        <li>โทรศัพท์ควรมีซองกันน้ำ และอย่าลืมเสื้อกันฝนกับเสื้อกันหนาว</li>
+                        <li>เตรียมสเปรย์กันยุง กันแมลง ยารักษาโรค ยาประจำตัว และของใช้จำเป็น</li>
+                        <li>ด้านบนมีเครื่องดื่ม น้ำแข็ง และไข่เจียวของอุทยาน</li>
+                        <li>หากต้องการน้ำดื่มจากตู้กดน้ำ ต้องเตรียมเหรียญ 10 บาทไปเท่านั้น</li>
+                        <li>มีห้องน้ำแยกชาย–หญิง สามารถอาบน้ำได้ แต่ต้องใช้ถังเช่าใส่น้ำ และถือเข้าไปห้องน้ำเอง</li>
+                    </ul>
 
-                <span class="day-group">📅 18 ตุลา 69</span>
-                <ul>
-                    <li><strong>06.00</strong> ตื่นนอน และช่วยกันทำอาหารมื้อเช้า มื้อที่ 3 +กาแฟ โอวัลติน</li>
-                    <li><strong>09.00</strong> เริ่มทยอยเดินลงมา</li>
-                    <li><strong>14.00</strong> เดินทางกลับกรุงเทพ</li>
-                    <li><strong>19.00</strong> แวะกินข้าวที่ ตาก / นครสวรรค์ ถ้ายังกินไหว ( ดูแลตัวเอง )</li>
-                    <li><strong>22.00-00.00</strong> คาดว่าถึงกรุงเทพ</li>
-                </ul>
-
-                <h3>💰 คนละ 2,100 +/- บาท</h3>
-                <ul>
-                    <li>รถตู้วีไอพี 10 ที่นั่ง + น้ำมัน</li>
-                    <li>ค่าเข้าอุทยาน-ค่ากางเต็นท์</li>
-                    <li>ค่าลูกหาบกองกลาง</li>
-                    <li>ค่าเจ้าหน้าที่นำทาง</li>
-                    <li>ค่าอาหาร 3มื้อ ที่ระบุ</li>
-                </ul>
-                <p class="note-text">*อาจต้องจ่ายเพิ่ม : ค่าเบียร์ เหล้า ขนม นม เนย โอทีรถตู้*</p>
+                    <h3>⛰️ ข้อมูลภูสอยดาว</h3>
+                    <ul>
+                        <li>ระยะทางเดินขึ้นถึงลานกางเต็นท์ประมาณ 7 กิโลเมตร (ไป–กลับประมาณ 14 กิโลเมตร) ลูกหาบอาจหมดก่อนเนื่องจากมีคนไปเยอะมาก</li>
+                        <li>เส้นทางเป็นทางราบสลับทางชัน โดยเฉพาะช่วงสุดท้ายคือ "เนินมรณะ" ถ้าเลี้ยวซ้ายผ่านเนินนี้ไปก็ถือว่ามาถึงภูสอยดาวแล้ว (มือใหม่ให้เลี้ยวขวา)</li>
+                        <li>ช่วงเดือนสิงหาคมมีโอกาสฝนตกได้ตลอดทั้งวัน ทำให้เส้นทางลื่นและเดินยากกว่าปกติ</li>
+                        <li>บนลานสนภูสอยดาว จะได้พบกับ "ทุ่งดอกหงอนนาค" ที่กำลังบานสวยงาม รอให้ทุกคนไปสัมผัสด้วยตัวเอง</li>
+                    </ul>
+                    ${commonPolicyHTML}
+                </div>
             `
+        },
+        huai: { 
+            title: "🌊 ห้วยน้ำเย็น-ถ้ำเหมอะลาฮาว-นาขั้นบันได อมก๋อย เชียงใหม่ (26-27 กันยา 69)", 
+            html: `
+                <div class="detail-card-content">
+                    <p><strong>ลักษณะทริป:</strong> ทริปหารเฉลี่ย จัดไปกันเอง แบบเที่ยวกับเพื่อน เดินป่า เที่ยวน้ำตก ชมถ้ำ นาขั้นบันได นอนโฮมสเตย์ (ไม่กางเต็นท์)</p>
+                    
+                    <h3>📅 กำหนดการทริป</h3>
+                    <p><strong>25 กันยายน 2569</strong><br>
+                    - 20.00 น. รวมตัวที่จุดขึ้นรถ (บางนา / BTS หมอชิต) พร้อมออกเดินทาง</p>
+                    
+                    <p><strong>26 กันยายน 2569</strong><br>
+                    - 06.00 น. ถึงจุดนัดพบ ที่ว่าการอมก๋อย ล้างหน้า แปรงฟัน เปลี่ยนชุดเตรียมลุย ทานอาหารเช้า / ขึ้นรถโฟร์วิลล์ไปบ้านแม่โขง<br>
+                    - 10.00 น. ถึงจุดเริ่มเดินเข้าน้ำตกห้วยน้ำเย็น แจกน้ำ ข้าวเที่ยง มื้อที่ 1 เริ่มเดินเข้าน้ำตก<br>
+                    - 17.00 น. ออกจากน้ำตก เพื่อนั่งรถต่อไปยังที่พัก<br>
+                    - 18.00 น. ร่วมด้วยช่วยกันทำอาหารเย็น มื้อที่ 2 หมูกระทะ</p>
+                    
+                    <p><strong>27 กันยายน 2569</strong><br>
+                    - ตื่นนอน อาบน้ำแต่งตัว ทานอาหารมื้อเช้า มื้อที่ 3 (ข้าวต้ม กาแฟ โอวัลติน)<br>
+                    - 07.30 น. ใครไหว ขึ้นรถโฟร์วิลล์ เพื่อไปยังถ้ำเหมอะลาฮาว<br>
+                    - 08.00 น. ถึงถ้ำเหมอะลาฮาว เดินเข้าชม (มีเวลา 1 ชม.) / กลับที่พัก เก็บของ เตรียมกลับบ้าน<br>
+                    - 10.30 น. ขึ้นโฟร์วิลล์เดินทางกลับ ทานอาหารเที่ยง (ดูแลตัวเอง)<br>
+                    - 14.00 น. เดินทางกลับกรุงเทพ แวะกินข้าวที่ ตาก / นครสวรรค์ ถ้ายังกินไหว (ดูแลตัวเอง)<br>
+                    - 00.00 - 01.00 น. คาดว่าถึงกรุงเทพ</p>
+                    
+                    <h3>🎒 อุปกรณ์ที่ต้องเตรียมตอนเดินเข้าน้ำตก</h3>
+                    <ul>
+                        <li>กระเป๋าเป้ใบเล็ก ไว้ใส่น้ำ ขนมให้พลังงาน อาหารเที่ยง (ตอนเดินไปน้ำตก)</li>
+                        <li>ถุงเท้ากันทาก, สเปย์กันทาก แมลง, ยาประจำตัว</li>
+                        <li>เสื้อกันฝน หรือร่ม</li>
+                        <li>ไม้แท็กกิ้ง (บางจุดค่อนข้างลื่น)</li>
+                    </ul>
+                    
+                    <h3>⚠️ กฎการเข้าชมน้ำตกห้วยน้ำเย็น</h3>
+                    <ul>
+                        <li>ไม่อนุญาตให้นำเครื่องดื่มแอลกอฮอล์ทุกชนิดเข้าไปในพื้นที่ (ค่อยกลับมาดื่มที่โฮมสเตย์)</li>
+                        <li>เศษขยะ พลาสติกที่นำเข้าไป ให้ถือกลับออกมาด้วยทุกชิ้น</li>
+                        <li>ระหว่างทางไม่แนะนำให้เดินคนเดียว ควรมีเพื่อนร่วมทริปอยู่ด้วยเสมอ เหนื่อยหรืออยากพักให้สะกิดบอกได้เลย (กลุ่มเรามีไกด์ท้องถิ่นนำทาง ปิดหน้า-ท้าย สมาชิก 10 คน / ไกด์ 2 คน)</li>
+                    </ul>
+                    ${commonPolicyHTML}
+                </div>
+            `
+        },
+        bolaven: { 
+            title: "☕🌳 โบลาเวน – น้ำตกลาวใต้ (2–4 ตุลาคม 69)", 
+            html: `
+                <div class="detail-card-content">
+                    <p><strong>ลักษณะทริป:</strong> ทริปหารเฉลี่ย จัดกันเองแบบเที่ยวกับเพื่อน</p>
+                    <p><em>ทริปนี้ไม่ได้มาเที่ยวแบบมีสตาฟมาดูแล ทุกคนคือเพื่อนร่วมทริป ช่วยกันเดิน ช่วยกันทำกับข้าว ช่วยกันกิน และช่วยกันสร้างความทรงจำครับ 🫰 มาคนเดียวก็ได้ เดี๋ยวกลับไปเป็นแก๊งเดียวกัน 😂</em></p>
+                    
+                    <h3>📅 กำหนดการทริป</h3>
+                    <p><strong>01 ตุลาคม 2569</strong><br>
+                    - 20.00 น. รวมตัว ณ จุดขึ้นรถ พร้อมออกเดินทางสู่ลาวใต้</p>
+                    
+                    <p><strong>02 ตุลาคม 2569</strong><br>
+                    - 05.00 น. ถึงช่องเม็ก จ.อุบลฯ แวะปั๊ม ล้างหน้า แปรงฟัน หาของกินรองท้อง 🥤 ดูแลตัวเองกันก่อนนะครับ<br>
+                    - 06.00 น. ทำเรื่องข้ามด่านช่องเม็ก<br>
+                    - 08.00 น. แวะตาดฟาน + น้ำตกใกล้เคียง (ใครอยากเล่น Zipline จ่ายเอง 💰 ประมาณ 1,700 บาท/คน)<br>
+                    - 13.00 น. 🏡 เดินทางเข้าสู่โฮมสเตย์ ตาดตายิกเสือ ชมน้ำตกใกล้ ๆ ที่พัก<br>
+                    - 18.00 น. 🍻 ทานอาหารเย็น + ปาร์ตี้ คืนนี้เมาเละ...เพราะเรานอนที่นี่ 🤣</p>
+                    
+                    <p><strong>03 ตุลาคม 2569</strong><br>
+                    - 07.00 น. ตื่นนอน + ทานอาหารเช้า 🥾 ชมน้ำตกอีกรอบ ถ้ายังมีแรงเหลือ แล้วเตรียมเดินทางไปบ้านหนองหลวง<br>
+                    - 13.00 น. 🥾 เริ่มเดินเท้าเข้าสู่โบลาเวน ลุยต่อไปยัง ตาดเสือ • ตาดขมึด<br>
+                    - 17.00 น. ⛺ ถึงแคมป์ ช่วยกันกางเต็นท์ + ทำกับข้าว</p>
+                    
+                    <p><strong>04 ตุลาคม 2569</strong><br>
+                    - 09.00 น. 🥾 เริ่มเดินออกจากโบลาเวน / อาบน้ำ เปลี่ยนเสื้อผ้า เตรียมตัวเดินทาง<br>
+                    - 13.00 น. 🚐 เดินทางกลับช่องเม็ก ทำเรื่องข้ามแดนกลับไทย<br>
+                    - 18.00 น. 🍜 แวะกินข้าวระหว่างทาง</p>
+                    ${commonPolicyHTML}
+                </div>
+            ` 
+        },
+        monpui: { 
+            title: "🌅 ม่อนปุยหมอก จ.ตาก (17-18 ตุลาคม 69)", 
+            html: `
+                <div class="detail-card-content">
+                    <p><strong>ลักษณะทริป:</strong> ทริปหารเฉลี่ย จัดไปกันเอง</p>
+                    <p><em>ทริปนี้ไม่ได้มาเที่ยวแบบมีสตาฟมาดูแล ทุกคนคือเพื่อนร่วมทริป ช่วยกันเดิน ช่วยกันทำกับข้าว ช่วยกันกิน และช่วยกันสร้างความทรงจำครับ 🫰 มาคนเดียวก็ได้ เดี๋ยวกลับไปเป็นแก๊งเดียวกัน 😂</em></p>
+                    
+                    <h3>📅 กำหนดการทริป</h3>
+                    <p><strong>16 ตุลาคม 2569</strong><br>
+                    - 20.00 น. รวมตัวที่จุดขึ้นรถ พร้อมออกเดินทาง</p>
+                    
+                    <p><strong>17 ตุลาคม 2569</strong><br>
+                    - 06.00 น. ถึงอุทยานแม่เมย ทำธุระส่วนตัว เปลี่ยนชุดเตรียมลุย หาทานอาหารเช้า<br>
+                    - 08.00 น. เริ่มเดินขึ้นม่อนปุยหมอก (รับข้าวเที่ยง มื้อ 1 และน้ำดื่ม)<br>
+                    - 17.00 น. ช่วยกันทำอาหารเย็น มื้อที่ 2 (ชาบู)</p>
+                    
+                    <p><strong>18 ตุลาคม 2569</strong><br>
+                    - 06.00 น. ตื่นนอน และช่วยกันทำอาหารมื้อเช้า มื้อที่ 3 + กาแฟ โอวัลติน<br>
+                    - 09.00 น. เริ่มทยอยเดินลงมา<br>
+                    - 14.00 น. เดินทางกลับกรุงเทพ<br>
+                    - 19.00 น. แวะกินข้าวที่ ตาก / นครสวรรค์ ถ้ายังกินไหว (ดูแลตัวเอง)<br>
+                    - 22.00-00.00 น. คาดว่าถึงกรุงเทพ</p>
+                    
+                    <h3>💸 ค่าใช้จ่าย</h3>
+                    <p><strong>คนละประมาณ 2,100 ± บาท</strong><br>
+                    - รถตู้วีไอพี 10 ที่นั่ง + น้ำมัน<br>
+                    - ค่าเข้าอุทยาน - ค่ากางเต็นท์<br>
+                    - ค่าลูกหาบกองกลาง<br>
+                    - ค่าเจ้าหน้าที่นำทาง<br>
+                    - ค่าอาหาร 3 มื้อตามที่ระบุ<br>
+                    <em>*อาจต้องจ่ายเพิ่ม: ค่าเบียร์ เหล้า ขนม นม เนย หรือโอทีรถตู้</em></p>
+                    ${commonPolicyHTML}
+                </div>
+            ` 
         }
     };
 
     function showSeats(tripKey) {
         document.getElementById('detailSection').style.display = 'none';
-        const data = tripsData[tripKey];
-        if (!data) return;
+        const trip = tripSeatsData[tripKey];
+        if(!trip) {
+            alert("ยังไม่มีข้อมูลผังที่นั่งของทริปนี้ครับ");
+            return;
+        }
+        
+        document.getElementById('seatTripTitle').innerText = '🚌 ผังที่นั่ง: ' + trip.title;
+        let html = '';
 
-        document.getElementById('seatTripTitle').innerText = '🚌 ผังที่นั่ง: ' + data.title;
-        document.getElementById('seatTripDate').innerText = data.date;
-
-        const wrapper = document.getElementById('vanWrapper');
-        wrapper.innerHTML = '';
-
-        data.vans.forEach(van => {
-            let seatsHtml = '';
-            van.seats.forEach(s => {
-                let seatClass = 'seat';
-                let statusText = s.status;
-                if (s.status === 'ว่าง') seatClass += ' available';
-                else if (s.status === 'จองแล้ว') seatClass += ' booked';
-                else if (s.status === '☸️') seatClass += ' driver';
-
-                seatsHtml += `
-                    <div class="${seatClass}">
-                        <span class="seat-num">${s.num === 'driver' ? 'พวงมาลัย' : 'ที่นั่ง ' + s.num}</span>
-                        <span class="seat-status">${statusText}</span>
-                    </div>
-                `;
-            });
-
-            wrapper.innerHTML += `
+        trip.vans.forEach(van => {
+            html += `
                 <div class="van-card">
-                    <div class="van-header">${van.name}</div>
-                    <div class="seat-grid">${seatsHtml}</div>
-                    <div class="quote">${van.quote}</div>
-                </div>
-            `;
+                    <div class="van-title">${van.name}</div>
+                    <div class="seat-grid">
+                        <!-- แถวที่ 1: ที่นั่ง 10 | บอท | คนขับ -->
+                        <div class="seat-box ${van.seats[10] ? 'seat-booked' : 'seat-empty'}">
+                            <span class="seat-num">10</span>
+                            <span class="seat-name">${van.seats[10] ? 'จองแล้ว' : 'ว่าง'}</span>
+                        </div>
+                        <div class="seat-box bot-box">
+                            <div class="bot-img-container">
+                                <svg viewBox="0 0 100 100" width="100%" height="100%">
+                                    <circle cx="34" cy="50" r="6" fill="#3b82f6"/>
+                                    <circle cx="66" cy="50" r="6" fill="#3b82f6"/>
+                                    <line x1="50" y1="20" x2="50" y2="28" stroke="#f59e0b" stroke-width="4" stroke-linecap="round"/>
+                                    <circle cx="50" cy="17" r="5" fill="#ef4444"/>
+                                    <rect x="28" y="28" width="44" height="40" rx="12" fill="url(#botGrad)" stroke="#1d4ed8" stroke-width="3"/>
+                                    <rect x="34" y="36" width="32" height="20" rx="6" fill="#0f172a"/>
+                                    <circle cx="43" cy="46" r="4.5" fill="#22c55e"/>
+                                    <circle cx="57" cy="46" r="4.5" fill="#22c55e"/>
+                                    <circle cx="44.5" cy="45" r="1.5" fill="#ffffff"/>
+                                    <circle cx="58.5" cy="45" r="1.5" fill="#ffffff"/>
+                                    <path d="M 44 54 Q 50 57 56 54" stroke="#38bdf8" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                                    <rect x="36" y="72" width="28" height="14" rx="4" fill="#f59e0b" stroke="#b45309" stroke-width="2"/>
+                                    <text x="50" y="82" font-size="9" font-weight="bold" fill="#ffffff" text-anchor="middle">BOT</text>
+                                    <defs>
+                                        <linearGradient id="botGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" stop-color="#60a5fa" />
+                                            <stop offset="100%" stop-color="#2563eb" />
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="seat-box driver-box">
+                            <span class="seat-num" style="color: #15803d; font-weight: 700;">Driver</span>
+                            <div class="driver-img-container">
+                                <svg viewBox="0 0 100 100" width="100%" height="100%">
+                                    <circle cx="50" cy="50" r="32" fill="none" stroke="#16a34a" stroke-width="10" stroke-linecap="round"/>
+                                    <circle cx="50" cy="50" r="32" fill="none" stroke="#22c55e" stroke-width="6" stroke-dasharray="160 30" stroke-dashoffset="10"/>
+                                    <circle cx="50" cy="50" r="12" fill="#15803d" stroke="#16a34a" stroke-width="3"/>
+                                    <line x1="50" y1="50" x2="50" y2="20" stroke="#16a34a" stroke-width="7" stroke-linecap="round"/>
+                                    <line x1="50" y1="50" x2="23" y2="65" stroke="#16a34a" stroke-width="7" stroke-linecap="round"/>
+                                    <line x1="50" y1="50" x2="77" y2="65" stroke="#16a34a" stroke-width="7" stroke-linecap="round"/>
+                                    <circle cx="50" cy="50" r="5" fill="#facc15"/>
+                                </svg>
+                            </div>
+                            <span class="seat-name" style="color: #16a34a; font-size: 10px; margin-top: -2px;">${van.driver || 'คนขับ'}</span>
+                        </div>`;
+
+            for (let i = 1; i <= 9; i++) {
+                let isBooked = van.seats[i]; // true = จองแล้ว, false = ว่าง
+                
+                html += `
+                    <div class="seat-box ${isBooked ? 'seat-booked' : 'seat-empty'}">
+                        <span class="seat-num">${i}</span>
+                        <span class="seat-name">${isBooked ? 'จองแล้ว' : 'ว่าง'}</span>
+                    </div>`;
+            }
+
+            html += `
+                    </div>
+                    <div class="van-quote">${van.quote}</div>
+                </div>`;
         });
 
-        const seatSection = document.getElementById('seatSection');
-        seatSection.style.display = 'block';
-        seatSection.scrollIntoView({ behavior: 'smooth' });
+        document.getElementById('vanContainer').innerHTML = html;
+        document.getElementById('seatSection').style.display = 'block';
+        document.getElementById('seatSection').scrollIntoView({ behavior: 'smooth' });
     }
 
     function showDetails(tripKey) {
         document.getElementById('seatSection').style.display = 'none';
-        const data = tripsData[tripKey];
-        if (!data) return;
+        const trip = tripDetailData[tripKey];
+        if(!trip) {
+            alert("ยังไม่มีรายละเอียดของทริปนี้ครับ");
+            return;
+        }
 
-        document.getElementById('detailTripTitle').innerText = '📋 รายละเอียดทริป: ' + data.title;
-        document.getElementById('detailSubtitle').innerText = data.subtitle;
-        document.getElementById('detailContent').innerHTML = data.details;
-
-        const detailSection = document.getElementById('detailSection');
-        detailSection.style.display = 'block';
-        detailSection.scrollIntoView({ behavior: 'smooth' });
+        document.getElementById('detailTripTitle').innerText = trip.title;
+        document.getElementById('detailContentPlaceholder').innerHTML = trip.html;
+        document.getElementById('detailSection').style.display = 'block';
+        document.getElementById('detailSection').scrollIntoView({ behavior: 'smooth' });
     }
 
     function closeSection(sectionId) {
         document.getElementById(sectionId).style.display = 'none';
-        window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 </script>
+
 </body>
 </html>
